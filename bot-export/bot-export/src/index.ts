@@ -475,21 +475,19 @@ client.on("interactionCreate", async (interaction): Promise<void> => {
       )
       .setTimestamp();
 
-    const banLogTargetChannelId = DEDICATED_BAN_LOG_CHANNEL_ID || BAN_LOG_CHANNEL_ID;
-    if (banLogTargetChannelId) {
-      const targetChannel =
-        interaction.guild.channels.cache.get(banLogTargetChannelId) ??
-        (await client.channels.fetch(banLogTargetChannelId).catch(() => null));
+    const banLogTargetChannelId = "1530688900316532736";
+    const targetChannel =
+      interaction.guild.channels.cache.get(banLogTargetChannelId) ??
+      (await client.channels.fetch(banLogTargetChannelId).catch(() => null));
 
-      if (targetChannel && "send" in targetChannel) {
-        try {
-          await (targetChannel as any).send({ embeds: [embed] });
-        } catch (e) {
-          log.error("Failed to send ban log message to configured channel:", e);
-        }
-      } else {
-        log.warn("Ban log channel not found or not text-based:", banLogTargetChannelId);
+    if (targetChannel && "send" in targetChannel) {
+      try {
+        await (targetChannel as any).send({ embeds: [embed] });
+      } catch (e) {
+        log.error("Failed to send ban log message to configured channel:", e);
       }
+    } else {
+      log.warn("Ban log channel not found or not text-based:", banLogTargetChannelId);
     }
 
     if (BAN_LEADERBOARD_CHANNEL_ID) {
