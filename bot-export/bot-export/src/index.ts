@@ -27,7 +27,7 @@ const log = {
 
 const PREFIX       = process.env["COMMAND_PREFIX"]        || "!";
 const MOD_ROLE_NAME = process.env["MODERATOR_ROLE_NAME"]  || "moderator";
-const MOD_ROLE_ID   = process.env["MODERATOR_ROLE_ID"]    || "11111111111111111";
+const MOD_ROLE_ID   = process.env["MODERATOR_ROLE_ID"]    || "1535405839316156537";
 const APPROVAL_CH   = process.env["ROLE_APPROVAL_CHANNEL_ID"] || "111111111111111111111";
 const WELCOME_CH    = process.env["WELCOME_CHANNEL_ID"]   || "11111111111111111";
 const TOKEN         = process.env["DISCORD_TOKEN"]; 
@@ -44,9 +44,9 @@ const REQUESTABLE_ROLE_IDS = [
 ];
 
 const BAN_SUBMIT_ROLE_ID = "role id !!!!!!";
-const BAN_LOG_CHANNEL_ID = process.env["BAN_LOG_CHANNEL_ID"] || "";
-const BAN_LEADERBOARD_CHANNEL_ID = process.env["BAN_LEADERBOARD_CHANNEL_ID"] || "";
-const DEDICATED_BAN_LOG_CHANNEL_ID = process.env["DEDICATED_BAN_LOG_CHANNEL_ID"] || "1524034321575313490";
+const BAN_LOG_CHANNEL_ID = process.env["BAN_LOG_CHANNEL_ID"] || "1530688900316532736";
+const BAN_LEADERBOARD_CHANNEL_ID = process.env["BAN_LEADERBOARD_CHANNEL_ID"] || "1530688900048355439";
+const DEDICATED_BAN_LOG_CHANNEL_ID = process.env["DEDICATED_BAN_LOG_CHANNEL_ID"] || "1530688900048355438";
 
 const pendingRequests = new Map<
   string,
