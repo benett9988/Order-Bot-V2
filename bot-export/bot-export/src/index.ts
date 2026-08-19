@@ -70,7 +70,8 @@ function hasModeratorRole(member: GuildMember | null | undefined): boolean {
 function hasBanSubmissionRole(member: GuildMember | null | undefined): boolean {
   if (!member) return false;
   if (hasModeratorRole(member)) return true;
-  return member.roles.cache.some((r) => r.id === BAN_SUBMIT_ROLE_ID);
+
+  return member.roles.cache.some((r) => BAN_SUBMIT_ROLE_IDS.includes(r.id));
 }
 
 async function buildLeaderboardEmbed(guildId: string) {
